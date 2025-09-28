@@ -3,6 +3,7 @@
 
 import os
 import asyncio
+import nest_asyncio  # Add this import to handle nested event loops in interactive environments
 import logging
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Tuple, Any
@@ -718,6 +719,7 @@ async def main():
     #     logger.info("Pipeline stopped by user")
 
 if __name__ == "__main__":
+    nest_asyncio.apply()  # Enable nested asyncio usage
     asyncio.run(main())
 
 # Additional configuration files and utilities
